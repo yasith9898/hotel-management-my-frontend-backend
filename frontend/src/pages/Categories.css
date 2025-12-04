@@ -1,0 +1,16 @@
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.category-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.category-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
