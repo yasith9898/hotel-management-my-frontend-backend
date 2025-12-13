@@ -32,7 +32,7 @@ const AdminCategories = () => {
             fetchCategories();
             resetForm();
         } catch (err) {
-            alert('Operation failed');
+            alert(err.response?.data?.message || err.message || 'Operation failed');
         }
     };
 
@@ -48,7 +48,7 @@ const AdminCategories = () => {
                 await categoryAPI.deleteCategory(id);
                 fetchCategories();
             } catch (err) {
-                alert('Delete failed');
+                alert(err.response?.data?.message || err.message || 'Delete failed');
             }
         }
     };

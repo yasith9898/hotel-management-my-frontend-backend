@@ -45,7 +45,7 @@ const bookingSchema = new mongoose.Schema({
     bookingReference: {
         type: String,
         unique: true,
-        required: true
+        required: false
     }
 }, {
     timestamps: true

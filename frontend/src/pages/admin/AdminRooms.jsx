@@ -61,7 +61,7 @@ const AdminRooms = () => {
             fetchRooms();
             resetForm();
         } catch (err) {
-            alert('Operation failed');
+            alert(err.response?.data?.message || err.message || 'Operation failed');
         }
     };
 
@@ -82,7 +82,7 @@ const AdminRooms = () => {
                 await roomAPI.deleteRoom(id);
                 fetchRooms();
             } catch (err) {
-                alert('Delete failed');
+                alert(err.response?.data?.message || err.message || 'Delete failed');
             }
         }
     };

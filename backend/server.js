@@ -4,10 +4,19 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 // Load env vars
-dotenv.config();
+const result = dotenv.config({ path: './.env', override: true });
+if (result.error) {
+    console.log('DOTENV ERROR:', result.error);
+}
+
+console.log('-----------------------------------');
+console.log('STARTING SERVER');
+console.log('DEBUG: MONGODB_URI is:', process.env.MONGODB_URI);
+console.log('-----------------------------------');
 
 // Connect to database
 connectDB();
+console.log('DEBUG: PORT is:', process.env.PORT);
 
 const app = express();
 
