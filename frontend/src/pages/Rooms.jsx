@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { roomAPI } from '../utils/api';
+import { convertGoogleDriveUrl, formatLKR } from '../utils/imageUtils';
 import { FaUsers, FaRulerCombined, FaBed } from 'react-icons/fa';
 import './Rooms.css';
 
@@ -54,7 +55,7 @@ const Rooms = () => {
                             <div key={room._id} className="room-card card">
                                 <div className="room-image">
                                     {room.images && room.images.length > 0 ? (
-                                        <img src={room.images[0]} alt={room.name} />
+                                        <img src={convertGoogleDriveUrl(room.images[0])} alt={room.name} />
                                     ) : (
                                         <div className="placeholder-image">
                                             <FaBed />
@@ -78,7 +79,7 @@ const Rooms = () => {
                                     <div className="room-footer">
                                         <div className="room-price">
                                             <span className="price-label">From</span>
-                                            <span className="price-value">${room.price}</span>
+                                            <span className="price-value">{formatLKR(room.price)}</span>
                                             <span className="price-period">/night</span>
                                         </div>
                                         <Link to={`/rooms/${room._id}`} className="btn btn-primary">

@@ -1,0 +1,138 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    🎯 WHAT YOU NEED TO DO NOW 🎯
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ STEP 1: Update Backend .env File                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+📂 Open this file:
+   backend\.env
+
+✏️ Find this line:
+   MONGODB_URI=mongodb://localhost:27017/hotel_management
+
+🔄 Replace with:
+   MONGODB_URI=mongodb+srv://yasith:yasith123@cluster0.cdkpovy.mongodb.net/hotel-management?retryWrites=true&w=majority&appName=Cluster0
+
+💾 Save the file
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ STEP 2: Restart Backend Server                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+⌨️ In your backend terminal:
+   1. Press Ctrl+C to stop the server
+   2. Run: npm run dev
+   3. Wait for: "MongoDB Connected: cluster0.cdkpovy.mongodb.net"
+
+✅ If you see the connection message, you're good to go!
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ STEP 3: Add Room Images (Google Drive)                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+📸 Upload image to Google Drive:
+   1. Go to drive.google.com
+   2. Upload your room image
+   3. Right-click → Share
+   4. Change to "Anyone with the link"
+   5. Copy the link
+
+🔗 Example link you'll get:
+   https://drive.google.com/file/d/1ABC123xyz/view?usp=sharing
+
+📋 In Admin Panel:
+   1. Go to Admin Dashboard → Manage Rooms
+   2. Click "Add Room"
+   3. Fill in room details
+   4. In "Image URLs" field, paste the Google Drive link
+   5. For multiple images, separate with commas:
+      https://drive.google.com/file/d/1ABC123/view,
+      https://drive.google.com/file/d/2DEF456/view
+
+💡 The app will automatically convert the link to work properly!
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ STEP 4: Set Prices in LKR                                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+💰 When adding rooms, enter prices in Sri Lankan Rupees:
+
+   Examples:
+   • Budget Room:    8500  → Displays as "LKR 8,500"
+   • Standard Room: 12000  → Displays as "LKR 12,000"
+   • Deluxe Room:   15000  → Displays as "LKR 15,000"
+   • Suite:         25000  → Displays as "LKR 25,000"
+
+🎯 Just enter the number (e.g., 15000)
+   The app will format it as "LKR 15,000" automatically!
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ STEP 5: Test Everything                                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+✓ Check backend console for MongoDB connection
+✓ Add a test room with Google Drive image
+✓ View the room on the Rooms page
+✓ Verify image displays correctly
+✓ Verify price shows as "LKR X,XXX"
+✓ Try creating a booking
+
+═══════════════════════════════════════════════════════════════════════════════
+                         📚 HELPFUL DOCUMENTS 📚
+═══════════════════════════════════════════════════════════════════════════════
+
+📖 NEW_FEATURES.md
+   → Detailed guide for all new features
+
+📖 MONGODB_IMAGES_CURRENCY_GUIDE.md
+   → Step-by-step setup instructions
+
+📖 QUICK_SETUP.txt
+   → Quick reference card
+
+📖 SAMPLE_ROOM_DATA.js
+   → Example room data with images
+
+📖 IMPLEMENTATION_SUMMARY.md
+   → Complete implementation overview
+
+═══════════════════════════════════════════════════════════════════════════════
+                         🆘 NEED HELP? 🆘
+═══════════════════════════════════════════════════════════════════════════════
+
+Problem: MongoDB won't connect
+Solution: Check MONGODB_IMAGES_CURRENCY_GUIDE.md → Troubleshooting
+
+Problem: Images not showing
+Solution: Check NEW_FEATURES.md → Section 2 → Troubleshooting
+
+Problem: Still shows $ instead of LKR
+Solution: Clear browser cache (Ctrl+Shift+Delete) and refresh
+
+═══════════════════════════════════════════════════════════════════════════════
+                         ✅ WHAT'S BEEN DONE ✅
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ MongoDB Atlas cloud connection configured
+✅ Google Drive image URL support added
+✅ Automatic URL conversion implemented
+✅ Sri Lankan Rupees (LKR) currency implemented
+✅ Number formatting with thousand separators
+✅ All frontend pages updated
+✅ Utility functions created
+✅ Complete documentation provided
+
+═══════════════════════════════════════════════════════════════════════════════
+                    🎉 YOU'RE READY TO GO! 🎉
+═══════════════════════════════════════════════════════════════════════════════
+
+Just update the .env file and restart the backend server!
+
+Your hotel management system now has:
+• Cloud database (MongoDB Atlas)
+• Easy image management (Google Drive)
+• Local currency (Sri Lankan Rupees)
+
+Happy hotel managing! 🏨

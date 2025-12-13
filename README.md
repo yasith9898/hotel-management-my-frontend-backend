@@ -26,7 +26,7 @@ A complete hotel management system built with MongoDB, Express.js, React.js, and
 ### Backend
 - **Node.js** - Runtime environment
 - **Express.js** - Web framework
-- **MongoDB** - Database (Local)
+- **MongoDB Atlas** - Cloud Database (or Local MongoDB)
 - **Mongoose** - ODM for MongoDB
 - **JWT** - Authentication
 - **bcryptjs** - Password hashing
@@ -38,11 +38,16 @@ A complete hotel management system built with MongoDB, Express.js, React.js, and
 - **Axios** - HTTP client
 - **React Icons** - Icon library
 
+### Additional Features
+- **Google Drive Integration** - Image URL support for room photos
+- **Sri Lankan Rupees (LKR)** - Currency formatting and display
+- **Auto URL Conversion** - Automatic Google Drive link conversion
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
 - **Node.js** (v14 or higher)
-- **MongoDB** (Local installation)
+- **MongoDB Atlas Account** (Cloud) OR **MongoDB** (Local installation)
 - **npm** or **yarn**
 
 ## 🚀 Installation & Setup
@@ -52,9 +57,26 @@ Before you begin, ensure you have the following installed:
 cd "c:\Users\Hi\Desktop\mern asiment\mern hotel 2"
 ```
 
-### 2. Install MongoDB Locally
+### 2. Database Setup - MongoDB Atlas (Cloud) **RECOMMENDED**
 
-If you haven't installed MongoDB locally:
+**Quick Setup:**
+1. Your MongoDB Atlas connection is already configured
+2. Connection String: `mongodb+srv://yasith:yasith123@cluster0.cdkpovy.mongodb.net/hotel-management`
+3. Update `backend/.env` with this connection string
+4. Skip to Step 3 (Backend Setup)
+
+**Detailed Setup (if needed):**
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a free account or sign in
+3. Create a new cluster (Free tier available)
+4. Go to Database Access → Add New Database User
+5. Go to Network Access → Add IP Address (Allow from anywhere: 0.0.0.0/0 for development)
+6. Get your connection string from "Connect" → "Connect your application"
+7. Update `backend/.env` with your connection string
+
+**OR - Local MongoDB Setup:**
+
+If you prefer local MongoDB:
 
 **Windows:**
 1. Download MongoDB Community Server from https://www.mongodb.com/try/download/community
@@ -76,8 +98,8 @@ cd backend
 # Install dependencies
 npm install
 
-# The .env file is already configured for local MongoDB
-# Default connection: mongodb://localhost:27017/hotel_management
+# Update .env file with MongoDB Atlas connection string
+# MONGODB_URI=mongodb+srv://yasith:yasith123@cluster0.cdkpovy.mongodb.net/hotel-management?retryWrites=true&w=majority&appName=Cluster0
 
 # Start the backend server
 npm run dev

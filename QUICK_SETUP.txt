@@ -1,0 +1,66 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                   QUICK SETUP INSTRUCTIONS                        ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📋 STEP 1: Update Backend .env File
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Location: backend\.env
+
+Add or update this line:
+MONGODB_URI=mongodb+srv://yasith:yasith123@cluster0.cdkpovy.mongodb.net/hotel-management?retryWrites=true&w=majority&appName=Cluster0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 STEP 2: Restart Backend Server
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Stop the current backend server (Ctrl+C)
+2. Run: npm run dev
+3. Look for: "MongoDB Connected: cluster0.cdkpovy.mongodb.net"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 STEP 3: Add Room Images (Google Drive)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Method 1: Use Google Drive Share Link (Automatic Conversion)
+   Just paste the sharing link directly:
+   https://drive.google.com/file/d/1ABC123xyz/view?usp=sharing
+   
+   ✅ The app will automatically convert it to direct image URL!
+
+Method 2: Use Direct Google Drive URL
+   Convert manually:
+   https://drive.google.com/uc?export=view&id=1ABC123xyz
+
+Method 3: Use Any Image URL
+   - Imgur: https://i.imgur.com/abc123.jpg
+   - Direct links: https://example.com/image.jpg
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 STEP 4: Test Everything
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ MongoDB Connection: Check backend console
+✓ Currency Display: Should show "LKR 15,000" not "$15000"
+✓ Images: Should display from Google Drive links
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 WHAT'S BEEN UPDATED:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ MongoDB Atlas connection string configured
+✅ Google Drive URL auto-conversion added
+✅ Currency changed to Sri Lankan Rupees (LKR)
+✅ Price formatting with thousand separators (15,000)
+✅ Image utilities for better image handling
+✅ Admin panel already supports image URLs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DETAILED GUIDE: See MONGODB_IMAGES_CURRENCY_GUIDE.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

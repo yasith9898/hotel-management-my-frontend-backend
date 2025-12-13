@@ -17,6 +17,7 @@ const AdminRooms = () => {
         floor: '',
         size: '',
         amenities: '',
+        images: '',
         status: 'available'
     });
 
@@ -47,7 +48,8 @@ const AdminRooms = () => {
         e.preventDefault();
         const roomData = {
             ...formData,
-            amenities: formData.amenities.split(',').map(a => a.trim())
+            amenities: formData.amenities.split(',').map(a => a.trim()),
+            images: formData.images.split(',').map(img => img.trim()).filter(img => img)
         };
 
         try {
@@ -68,7 +70,8 @@ const AdminRooms = () => {
         setFormData({
             ...room,
             category: room.category._id,
-            amenities: room.amenities.join(', ')
+            amenities: room.amenities.join(', '),
+            images: room.images ? room.images.join(', ') : ''
         });
         setShowForm(true);
     };
@@ -95,6 +98,7 @@ const AdminRooms = () => {
             floor: '',
             size: '',
             amenities: '',
+            images: '',
             status: 'available'
         });
         setEditingRoom(null);
@@ -156,13 +160,14 @@ const AdminRooms = () => {
 
                             <div className="form-row">
                                 <div className="form-group">
-                                    <label className="form-label">Price</label>
+                                    <label className="form-label">Price (LKR per night)</label>
                                     <input
                                         type="number"
                                         className="form-control"
                                         value={formData.price}
                                         onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                                         required
+                                        placeholder="e.g., 15000"
                                     />
                                 </div>
 
@@ -223,6 +228,20 @@ const AdminRooms = () => {
                             </div>
 
                             <div className="form-group">
+                                <label className="form-label">Image URLs (comma separated)</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={formData.images}
+                                    onChange={(e) => setFormData({ ...formData, images: e.target.value })}
+                                    placeholder="https://drive.google.com/..., https://example.com/image2.jpg"
+                                />
+                                <small className="form-text text-muted">
+                                    For Google Drive: Share image → Get link → Use direct image URL
+                                </small>
+                            </div>
+
+                            <div className="form-group">
                                 <label className="form-label">Status</label>
                                 <select
                                     className="form-control"
@@ -261,7 +280,7 @@ const AdminRooms = () => {
                                     <td>{room.roomNumber}</td>
                                     <td>{room.name}</td>
                                     <td>{room.category?.name}</td>
-                                    <td>${room.price}</td>
+                                    <td>LKR {room.price.toLocaleString()}</td>
                                     <td>{room.capacity}</td>
                                     <td><span className={`badge badge-${room.status === 'available' ? 'success' : 'warning'}`}>{room.status}</span></td>
                                     <td>

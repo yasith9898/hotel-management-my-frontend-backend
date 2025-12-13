@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { roomAPI, bookingAPI } from '../utils/api';
+import { convertGoogleDriveUrl, formatLKR } from '../utils/imageUtils';
 import { FaUsers, FaRulerCombined, FaBed, FaWifi, FaTv, FaSnowflake } from 'react-icons/fa';
 import './RoomDetails.css';
 
@@ -66,7 +67,7 @@ const RoomDetails = () => {
                 <div className="room-details-grid">
                     <div className="room-images">
                         {room.images && room.images.length > 0 ? (
-                            <img src={room.images[0]} alt={room.name} className="main-image" />
+                            <img src={convertGoogleDriveUrl(room.images[0])} alt={room.name} className="main-image" />
                         ) : (
                             <div className="placeholder-main"><FaBed /></div>
                         )}
@@ -76,7 +77,7 @@ const RoomDetails = () => {
                         <h1>{room.name}</h1>
                         <p className="room-number">Room #{room.roomNumber}</p>
                         <div className="room-price-large">
-                            <span className="price">${room.price}</span>
+                            <span className="price">{formatLKR(room.price)}</span>
                             <span className="period">/night</span>
                         </div>
 
