@@ -45,6 +45,7 @@ Click **"Deploy"**. Vercel will build your frontend and backend.
 *   **Build Failures**: Check the deployment logs in Vercel to see if it failed during `npm install` or the build command.
 *   **404 on Refresh**: If you refresh a page like `/users` and get a 404, ensure the `vercel.json` routes are correctly handling the rewrite (we have configured this).
 *   **Database Connection**: Ensure your MongoDB Atlas Network Access allows connections from anywhere (`0.0.0.0/0`) or specific Vercel IPs (allowing all is easiest for serverless).
+*   **Blank Page**: If you see a blank page, it's likely due to static assets (JS/CSS) 404ing. We have updated `vercel.json` with specific rewrite rules to fix this by mapping `/assets/` to `/frontend/assets/`.
 
 ## Project Structure Notes for Vercel
 *   **vercel.json**: This file tells Vercel to treat `backend/server.js` as a serverless function and build `frontend` as a static site.
